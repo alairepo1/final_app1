@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const geocode = require('./scripts.js');
-// var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8080;
 
 //middleware
 var route = express();
@@ -56,6 +56,6 @@ route.post('/get_currency', async(request, response)=> {
 
 });
 
-route.listen(8080, (request, response)=>{
-    console.log('server is up on port 8080')
+route.listen(port, (request, response)=>{
+    console.log(`server is up on port ${port}`)
 });
